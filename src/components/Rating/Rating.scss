@@ -1,0 +1,20 @@
+@import '../../scss/variables';
+@import '../../scss/media';
+
+.wrapper {
+  width: 50%;
+}
+
+.rating {
+  width: 100%;
+  background-color: $body-color;
+  overflow: hidden;
+  height: 1rem;
+  border-radius: 1rem;
+  position: relative;
+}
+
+.rating__fill {
+  height: 100%;
+  transition: width 0.3s;
+}

@@ -1,0 +1,124 @@
+@import '../../scss/variables';
+@import '../../scss/media';
+
+.header {
+  width: 100%;
+  background-color: $main-color;
+  height: 5rem;
+  padding: 0 3rem;
+  display: flex;
+  align-items: center;
+  @include tablet {
+    padding: 0 1rem;
+  }
+  &__content {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    &__menu {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      font-size: 1.5rem;
+      font-weight: 500;
+      transition: opacity 0.5s ease, visibility 0.5s ease;
+      &__link:hover {
+        color: $hover-color;
+      }
+      @include tablet {
+        display: flex;
+        flex-direction: column;
+        background-color: rgba($color: $main-color, $alpha: 0.9);
+        position: absolute;
+        top: 70px;
+        right: 0;
+        width: 100%;
+        padding: 1rem;
+        opacity: 0;
+        visibility: hidden;
+        z-index: 20;
+        &.open {
+          opacity: 1;
+          visibility: visible;
+        }
+      }
+      &__link {
+        position: relative;
+        transition: transform 0.5s ease;
+        cursor: pointer;
+
+        @media (hover: hover) {
+          &:hover {
+            transform: translateY(-5px);
+
+            &::after {
+              width: 100%;
+            }
+          }
+        }
+
+        &::after {
+          position: absolute;
+          content: '';
+          left: 0;
+          width: 0;
+          height: 3px;
+          background: $gradient;
+          transition: width 0.3s ease;
+          bottom: -10px;
+        }
+      }
+    }
+    &__hamburger {
+      display: none;
+      flex-direction: column;
+      justify-content: space-around;
+      width: 2rem;
+      height: 2rem;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0;
+      z-index: 10;
+      @include tablet {
+        display: flex;
+      }
+      span {
+        width: 2rem;
+        height: 0.25rem;
+        background: #fff;
+        border-radius: 10px;
+        transition: all 0.3s linear;
+        position: relative;
+        transform-origin: 1px;
+
+        &:nth-child(1) {
+          transform: rotate(0);
+        }
+
+        &:nth-child(2) {
+          opacity: 1;
+          transform: translateX(0);
+        }
+
+        &:nth-child(3) {
+          transform: rotate(0);
+        }
+      }
+
+      &.open span:nth-child(1) {
+        transform: rotate(45deg);
+      }
+
+      &.open span:nth-child(2) {
+        opacity: 0;
+        transform: translateX(20px);
+      }
+
+      &.open span:nth-child(3) {
+        transform: rotate(-45deg);
+      }
+    }
+  }
+}

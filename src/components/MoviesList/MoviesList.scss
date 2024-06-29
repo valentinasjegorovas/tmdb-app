@@ -1,0 +1,35 @@
+@import '../../scss/variables';
+@import '../../scss/media';
+
+.movies {
+  padding: 1rem 3rem;
+  @include tablet {
+    padding: 1rem;
+  }
+  &__card {
+    margin-top: 1rem;
+    width: 200px;
+    p {
+      font-weight: 600;
+    }
+    p > span {
+      font-weight: normal;
+      color: #ccc;
+    }
+    &__poster {
+      width: 200px;
+      height: 300px;
+      border-radius: 1rem;
+    }
+    &__descr {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+  }
+}
+
+.swiper-slide {
+  width: auto;
+  height: auto;
+}
