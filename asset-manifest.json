@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/tmdb-app/static/css/main.ee0896d8.css",
-    "main.js": "/tmdb-app/static/js/main.fcae939e.js",
-    "static/media/drive.jpg": "/tmdb-app/static/media/drive.f731b31984e5262c81a4.jpg",
-    "static/media/error.gif": "/tmdb-app/static/media/error.42292aa12b6bc303ce99.gif",
-    "index.html": "/tmdb-app/index.html",
-    "main.ee0896d8.css.map": "/tmdb-app/static/css/main.ee0896d8.css.map",
-    "main.fcae939e.js.map": "/tmdb-app/static/js/main.fcae939e.js.map"
+    "main.css": "/static/css/main.5c4d1181.css",
+    "main.js": "/static/js/main.349bf8c2.js",
+    "static/media/drive.jpg": "/static/media/drive.f731b31984e5262c81a4.jpg",
+    "static/media/error.gif": "/static/media/error.42292aa12b6bc303ce99.gif",
+    "index.html": "/index.html",
+    "main.5c4d1181.css.map": "/static/css/main.5c4d1181.css.map",
+    "main.349bf8c2.js.map": "/static/js/main.349bf8c2.js.map"
   },
   "entrypoints": [
-    "static/css/main.ee0896d8.css",
-    "static/js/main.fcae939e.js"
+    "static/css/main.5c4d1181.css",
+    "static/js/main.349bf8c2.js"
   ]
 }
