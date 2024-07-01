@@ -1,14 +1,15 @@
 {
   "files": {
-    "main.css": "/tmdb-app/static/css/main.e20014a5.css",
-    "main.js": "/tmdb-app/static/js/main.89afc37f.js",
+    "main.css": "/tmdb-app/static/css/main.ee0896d8.css",
+    "main.js": "/tmdb-app/static/js/main.fcae939e.js",
+    "static/media/drive.jpg": "/tmdb-app/static/media/drive.f731b31984e5262c81a4.jpg",
     "static/media/error.gif": "/tmdb-app/static/media/error.42292aa12b6bc303ce99.gif",
     "index.html": "/tmdb-app/index.html",
-    "main.e20014a5.css.map": "/tmdb-app/static/css/main.e20014a5.css.map",
-    "main.89afc37f.js.map": "/tmdb-app/static/js/main.89afc37f.js.map"
+    "main.ee0896d8.css.map": "/tmdb-app/static/css/main.ee0896d8.css.map",
+    "main.fcae939e.js.map": "/tmdb-app/static/js/main.fcae939e.js.map"
   },
   "entrypoints": [
-    "static/css/main.e20014a5.css",
-    "static/js/main.89afc37f.js"
+    "static/css/main.ee0896d8.css",
+    "static/js/main.fcae939e.js"
   ]
 }
