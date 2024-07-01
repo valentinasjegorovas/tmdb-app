@@ -1,9 +1,12 @@
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import MainPage from '../Pages/MainPage';
-import MoviesPage from '../Pages/MoviesPage';
-import TopMoviesPage from '../Pages/TopMoviesPage';
-import TvPage from '../Pages/TvPage';
-import TvPageTop from '../Pages/TvPageTop';
+import { HashRouter as Router, Switch, Route } from 'react-router-dom';
+import {
+  MainPage,
+  MoviesPage,
+  Page404,
+  TopMoviesPage,
+  TvPage,
+  TvPageTop,
+} from '../Pages';
 import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
 import './App.scss';
@@ -28,6 +31,9 @@ function App() {
           </Route>
           <Route exact path="/tv/top">
             <TvPageTop />
+          </Route>
+          <Route path="*">
+            <Page404 />
           </Route>
         </Switch>
         <Footer />
