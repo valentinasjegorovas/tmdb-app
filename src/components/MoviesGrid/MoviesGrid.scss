@@ -1,0 +1,40 @@
+@import '../../scss/variables';
+@import '../../scss/media';
+
+.movies-grid {
+  padding: 0 3rem 1rem 3rem;
+  @include tablet {
+    padding: 1rem;
+  }
+  &__wrapper {
+    margin-bottom: 1rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 300px);
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    &__btns {
+      text-align: center;
+    }
+    &__card {
+      &__poster {
+        border-radius: 1rem;
+        width: 300px;
+        height: 450px;
+        object-fit: cover;
+      }
+      &__descr {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+      p {
+        font-weight: 600;
+      }
+      p > span {
+        font-weight: normal;
+        color: #ccc;
+      }
+    }
+  }
+}

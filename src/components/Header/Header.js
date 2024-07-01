@@ -1,19 +1,20 @@
 import React from 'react';
 import { useState } from 'react';
+import { NavLink } from 'react-router-dom';
 import './Header.scss';
 
 const links = [
   {
     title: 'Home',
-    href: '#',
+    link: '/',
   },
   {
     title: 'Movies',
-    href: '#',
+    link: '/movies',
   },
   {
     title: 'Tv',
-    href: '#',
+    link: '/tv',
   },
 ];
 
@@ -40,13 +41,19 @@ const Header = () => {
           <span></span>
         </button>
         <ul className={`header__content__menu ${isMenuOpen ? 'open' : ''}`}>
-          {links.map((link, i) => (
+          {links.map((item, i) => (
             <li
               key={i}
               className="header__content__menu__link"
               onClick={closeMenu}
             >
-              <a href={link.href}>{link.title}</a>
+              <NavLink
+                activeStyle={{ color: '#76b852' }}
+                exact={item.link === '/'}
+                to={item.link}
+              >
+                {item.title}
+              </NavLink>
             </li>
           ))}
         </ul>

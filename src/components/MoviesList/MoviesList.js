@@ -11,7 +11,7 @@ import './MoviesList.scss';
 
 const MoviesList = (props) => {
   const [moviesList, setMoviesList] = useState([]);
-  const { error, request, loading } = props;
+  const { error, request, loading, children, link } = props;
 
   console.log(moviesList);
 
@@ -23,7 +23,7 @@ const MoviesList = (props) => {
   const errorMessage = error ? <ErrorMessage /> : null;
   const content =
     loading || error ? null : (
-      <View moviesList={moviesList} title={props.children} />
+      <View moviesList={moviesList} title={children} link={link} />
     );
 
   return (
@@ -35,7 +35,7 @@ const MoviesList = (props) => {
   );
 };
 
-const View = ({ moviesList, title }) => {
+const View = ({ moviesList, title, link }) => {
   const posterImage = 'https://media.themoviedb.org/t/p/w200';
   return (
     <div className="movies">
@@ -45,6 +45,7 @@ const View = ({ moviesList, title }) => {
           <SwiperSlide key={index}>
             <div className="movies__card">
               <img
+                alt={movie.title || movie.name}
                 className="movies__card__poster"
                 src={`${posterImage}${
                   movie.poster_path || movie.backdrop_path
@@ -61,7 +62,7 @@ const View = ({ moviesList, title }) => {
           </SwiperSlide>
         ))}
       </Swiper>
-      <Button href="#">View More</Button>
+      <Button link={link}>View More</Button>
     </div>
   );
 };
@@ -71,6 +72,7 @@ MoviesList.propTypes = {
   error: PropTypes.any,
   loading: PropTypes.bool.isRequired,
   children: PropTypes.node,
+  link: PropTypes.string,
 };
 
 View.propTypes = {

@@ -1,48 +1,38 @@
-import MoviesService from '../../service/MoviesService';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import MainPage from '../Pages/MainPage';
+import MoviesPage from '../Pages/MoviesPage';
+import TopMoviesPage from '../Pages/TopMoviesPage';
+import TvPage from '../Pages/TvPage';
+import TvPageTop from '../Pages/TvPageTop';
 import Header from '../Header/Header';
-import MoviesList from '../MoviesList/MoviesList';
-import Hero from '../Hero/Hero';
-import ErrorBoundary from '../ErrorBoundary/ErrorBoundary';
 import Footer from '../Footer/Footer';
 import './App.scss';
 
 function App() {
-  const {
-    getMoviesNowPlaying,
-    getMoviesTopRated,
-    getTvOnTheAir,
-    getTvTopRated,
-    loading,
-    error,
-  } = MoviesService();
   return (
-    <div className="app">
-      <Header />
-      <ErrorBoundary>
-        <Hero {...{ getMoviesNowPlaying, loading, error }} />
-      </ErrorBoundary>
-      <ErrorBoundary>
-        <MoviesList request={getMoviesNowPlaying} {...{ loading, error }}>
-          Movies In Theaters (2024)
-        </MoviesList>
-      </ErrorBoundary>
-      <ErrorBoundary>
-        <MoviesList request={getMoviesTopRated} {...{ loading, error }}>
-          Top Rated Movies
-        </MoviesList>
-      </ErrorBoundary>
-      <ErrorBoundary>
-        <MoviesList request={getTvOnTheAir} {...{ loading, error }}>
-          TV Series On The Air
-        </MoviesList>
-      </ErrorBoundary>
-      <ErrorBoundary>
-        <MoviesList request={getTvTopRated} {...{ loading, error }}>
-          Top Rated TV Series
-        </MoviesList>
-      </ErrorBoundary>
-      <Footer />
-    </div>
+    <Router>
+      <div className="app">
+        <Header />
+        <Switch>
+          <Route exact path="/">
+            <MainPage />
+          </Route>
+          <Route exact path="/movies">
+            <MoviesPage />
+          </Route>
+          <Route exact path="/movies/top">
+            <TopMoviesPage />
+          </Route>
+          <Route exact path="/tv">
+            <TvPage />
+          </Route>
+          <Route exact path="/tv/top">
+            <TvPageTop />
+          </Route>
+        </Switch>
+        <Footer />
+      </div>
+    </Router>
   );
 }
 

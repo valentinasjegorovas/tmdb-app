@@ -1,18 +1,19 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './Footer.scss';
 
 const links = [
   {
     title: 'Home',
-    href: '#',
+    link: '/',
   },
   {
     title: 'Movies',
-    href: '#',
+    link: '/movies',
   },
   {
     title: 'Tv',
-    href: '#',
+    link: '/tv',
   },
 ];
 
@@ -22,7 +23,7 @@ const Footer = () => {
       <ul className="footer__links">
         {links.map((item, index) => (
           <li key={index} className="footer__links__link">
-            <a href={item.href}>{item.title}</a>
+            <Link to={item.link}>{item.title}</Link>
           </li>
         ))}
       </ul>
