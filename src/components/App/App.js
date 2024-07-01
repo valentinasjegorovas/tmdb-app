@@ -3,11 +3,18 @@ import Header from '../Header/Header';
 import MoviesList from '../MoviesList/MoviesList';
 import Hero from '../Hero/Hero';
 import ErrorBoundary from '../ErrorBoundary/ErrorBoundary';
+import Footer from '../Footer/Footer';
 import './App.scss';
 
 function App() {
-  const { getMoviesNowPlaying, getMoviesTopRated, loading, error } =
-    MoviesService();
+  const {
+    getMoviesNowPlaying,
+    getMoviesTopRated,
+    getTvOnTheAir,
+    getTvTopRated,
+    loading,
+    error,
+  } = MoviesService();
   return (
     <div className="app">
       <Header />
@@ -16,7 +23,7 @@ function App() {
       </ErrorBoundary>
       <ErrorBoundary>
         <MoviesList request={getMoviesNowPlaying} {...{ loading, error }}>
-          Movies in Theaters (2024)
+          Movies In Theaters (2024)
         </MoviesList>
       </ErrorBoundary>
       <ErrorBoundary>
@@ -24,6 +31,17 @@ function App() {
           Top Rated Movies
         </MoviesList>
       </ErrorBoundary>
+      <ErrorBoundary>
+        <MoviesList request={getTvOnTheAir} {...{ loading, error }}>
+          TV Series On The Air
+        </MoviesList>
+      </ErrorBoundary>
+      <ErrorBoundary>
+        <MoviesList request={getTvTopRated} {...{ loading, error }}>
+          Top Rated TV Series
+        </MoviesList>
+      </ErrorBoundary>
+      <Footer />
     </div>
   );
 }

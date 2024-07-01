@@ -58,9 +58,9 @@ const View = (props) => {
 };
 
 Hero.propTypes = {
-  getMoviesNowPlaying: PropTypes.func,
+  getMoviesNowPlaying: PropTypes.func.isRequired,
   error: PropTypes.any,
-  loading: PropTypes.bool,
+  loading: PropTypes.bool.isRequired,
 };
 
 export default Hero;

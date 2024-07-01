@@ -13,13 +13,6 @@ const MoviesService = () => {
     return response.results;
   };
 
-  const getMoviesPopular = async (page = 1) => {
-    const response = await request(
-      `${api_base}movie/popular?page=${page}api_key=${api_key}`
-    );
-    return response.results;
-  };
-
   const getMoviesTopRated = async (page = 1) => {
     const response = await request(
       `${api_base}movie/top_rated?page=${page}api_key=${api_key}`
@@ -27,9 +20,16 @@ const MoviesService = () => {
     return response.results;
   };
 
-  const getMoviesUpcoming = async (page = 1) => {
+  const getTvOnTheAir = async (page = 1) => {
     const response = await request(
-      `${api_base}movie/upcoming?page=${page}api_key=${api_key}`
+      `${api_base}tv/on_the_air?page=${page}api_key=${api_key}`
+    );
+    return response.results;
+  };
+
+  const getTvTopRated = async (page = 1) => {
+    const response = await request(
+      `${api_base}tv/top_rated?page=${page}api_key=${api_key}`
     );
     return response.results;
   };
@@ -43,10 +43,10 @@ const MoviesService = () => {
     loading,
     error,
     getMoviesNowPlaying,
-    getMoviesPopular,
     getMoviesTopRated,
+    getTvOnTheAir,
+    getTvTopRated,
     getDetails,
-    getMoviesUpcoming,
   };
 };
 

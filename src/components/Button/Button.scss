@@ -1,0 +1,17 @@
+@import '../../scss/variables';
+@import '../../scss/media';
+
+.btn {
+  padding: 0.5rem 1rem;
+  background-color: transparent;
+  border-radius: 1rem;
+  border: 1px solid #fff;
+  transition: all 0.3s ease;
+  font-weight: 600;
+  @media (hover: hover) {
+    &:hover {
+      background-color: $hover-color;
+      border: 1px solid $hover-color;
+    }
+  }
+}

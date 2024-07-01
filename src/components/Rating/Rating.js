@@ -10,7 +10,7 @@ const Rating = ({ rating }) => {
         <div
           style={{
             width: fillWidth,
-            backgroundColor: rating < 7 ? '#f28b82' : '#8dc26f',
+            backgroundColor: rating < 7 ? '#f28b82' : '#76b852',
           }}
           className="rating__fill"
         ></div>

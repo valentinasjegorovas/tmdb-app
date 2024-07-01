@@ -5,7 +5,7 @@ import './RatingCircle.scss';
 const RatingCircle = ({ rating }) => {
   const circumference = 2 * Math.PI * 25;
   const offset = circumference - (rating / 10) * circumference;
-  const fillColor = rating < 7 ? '#f28b82' : '#8dc26f';
+  const fillColor = rating < 7 ? '#f28b82' : '#76b852';
 
   return (
     <div className="rating-wrapper">
