@@ -8,7 +8,11 @@ const TopMoviesPage = () => {
   return (
     <>
       <ErrorBoundary>
-        <MoviesGrid request={getMoviesTopRated} {...{ loading, error }} />
+        <MoviesGrid
+          type="movies"
+          request={getMoviesTopRated}
+          {...{ loading, error }}
+        />
       </ErrorBoundary>
     </>
   );

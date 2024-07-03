@@ -8,7 +8,7 @@ const TvPageTop = () => {
   return (
     <>
       <ErrorBoundary>
-        <MoviesGrid request={getTvTopRated} {...{ loading, error }} />
+        <MoviesGrid type="tv" request={getTvTopRated} {...{ loading, error }} />
       </ErrorBoundary>
     </>
   );

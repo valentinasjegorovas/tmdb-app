@@ -1,5 +1,6 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import RatingCircle from '../RatingCircle/RatingCircle';
 import Button from '../Button/Button';
@@ -12,7 +13,7 @@ const MoviesGrid = (props) => {
   const [newItemsLoading, setNewItemsLoading] = useState(false);
   const [pages, setPages] = useState(1);
 
-  const { request, error, loading } = props;
+  const { request, error, loading, type } = props;
   const posterImage = 'https://media.themoviedb.org/t/p/w300';
 
   useEffect(() => {
@@ -33,13 +34,13 @@ const MoviesGrid = (props) => {
   const renderMovies = () => {
     const movies = moviesList.map((movie, index) => (
       <div key={index} className="movies-grid__wrapper__card">
-        <a href="#">
+        <Link to={`/${type}/${movie.id}`}>
           <img
             className="movies-grid__wrapper__card__poster"
             src={`${posterImage}${movie.poster_path || movie.backdrop_path}`}
             alt=""
           />
-        </a>
+        </Link>
         <RatingCircle rating={movie.vote_average} />
         <div className="movies-grid__wrapper__card__descr">
           <p>{movie.title || movie.name}</p>

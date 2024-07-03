@@ -8,7 +8,11 @@ const MoviesPage = () => {
   return (
     <>
       <ErrorBoundary>
-        <MoviesGrid request={getMoviesNowPlaying} {...{ loading, error }} />
+        <MoviesGrid
+          type="movies"
+          request={getMoviesNowPlaying}
+          {...{ loading, error }}
+        />
       </ErrorBoundary>
     </>
   );

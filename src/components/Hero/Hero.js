@@ -11,6 +11,7 @@ const Hero = (props) => {
 
   useEffect(() => {
     const moviesIds = Math.floor(Math.random() * 20);
+    if (!moviesIds) return;
     getMoviesNowPlaying().then((movie) => setMovie(movie[moviesIds]));
   }, []);
 

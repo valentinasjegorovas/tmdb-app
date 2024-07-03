@@ -6,6 +6,8 @@ import {
   TopMoviesPage,
   TvPage,
   TvPageTop,
+  MoviePage,
+  SingleTvPage,
 } from '../Pages';
 import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
@@ -31,6 +33,12 @@ function App() {
           </Route>
           <Route exact path="/tv/top">
             <TvPageTop />
+          </Route>
+          <Route exact path="/movies/:movieId">
+            <MoviePage />
+          </Route>
+          <Route exact path="/tv/:movieId">
+            <SingleTvPage />
           </Route>
           <Route path="*">
             <Page404 />

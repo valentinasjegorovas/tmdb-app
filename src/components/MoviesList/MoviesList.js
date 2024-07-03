@@ -13,8 +13,6 @@ const MoviesList = (props) => {
   const [moviesList, setMoviesList] = useState([]);
   const { error, request, loading, children, link } = props;
 
-  console.log(moviesList);
-
   useEffect(() => {
     request().then((moviesList) => setMoviesList(moviesList));
   }, []);
@@ -41,7 +39,7 @@ const View = ({ moviesList, title, link }) => {
     <div className="movies">
       <h2>{title}</h2>
       <Swiper grabCursor={true} spaceBetween={16} slidesPerView={'auto'}>
-        {moviesList.map((movie, index) => (
+        {moviesList.slice(0, 10).map((movie, index) => (
           <SwiperSlide key={index}>
             <div className="movies__card">
               <img
