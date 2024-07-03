@@ -38,3 +38,26 @@
     }
   }
 }
+
+.search {
+  padding: 0 3rem 1.5rem 3rem;
+  text-align: center;
+  @include tablet {
+    padding: 1rem;
+  }
+  &__input,
+  &__btn {
+    border: none;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+  }
+  &__input {
+    border-radius: 1rem 0 0 1rem;
+  }
+  &__btn {
+    border-radius: 0 1rem 1rem 0;
+    background-color: $hover-color;
+    color: #fff;
+    cursor: pointer;
+  }
+}

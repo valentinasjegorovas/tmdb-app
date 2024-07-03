@@ -72,6 +72,20 @@ const MoviesService = () => {
     return response.results;
   };
 
+  const searchMovie = async (query, page = 1) => {
+    const response = await request(
+      `${api_base}search/movie?query=${query}&page=${page}&api_key=${api_key}`
+    );
+    return response.results;
+  };
+
+  const searchTv = async (query, page = 1) => {
+    const response = await request(
+      `${api_base}search/tv?query=${query}&page=${page}&api_key=${api_key}`
+    );
+    return response.results;
+  };
+
   return {
     loading,
     error,
@@ -85,6 +99,8 @@ const MoviesService = () => {
     getTvDetails,
     getTvCredits,
     getTvVideos,
+    searchMovie,
+    searchTv,
   };
 };
 

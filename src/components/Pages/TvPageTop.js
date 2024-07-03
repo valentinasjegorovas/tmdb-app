@@ -4,11 +4,16 @@ import MoviesGrid from '../MoviesGrid/MoviesGrid';
 import MoviesService from '../../service/MoviesService';
 
 const TvPageTop = () => {
-  const { getTvTopRated, loading, error } = MoviesService();
+  const { getTvTopRated, loading, error, searchTv } = MoviesService();
   return (
     <>
       <ErrorBoundary>
-        <MoviesGrid type="tv" request={getTvTopRated} {...{ loading, error }} />
+        <MoviesGrid
+          search={searchTv}
+          type="tv"
+          request={getTvTopRated}
+          {...{ loading, error }}
+        />
       </ErrorBoundary>
     </>
   );
