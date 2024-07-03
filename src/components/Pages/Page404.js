@@ -5,7 +5,14 @@ const Page404 = () => {
   return (
     <div>
       <ErrorMessage />
-      <p style={{ textAlign: 'center', fontWeight: 'bold', fontSize: '24px' }}>
+      <p
+        style={{
+          textAlign: 'center',
+          fontWeight: 'bold',
+          fontSize: '24px',
+          marginTop: '2rem',
+        }}
+      >
         Page doesn't exist
       </p>
       <Link
@@ -14,7 +21,7 @@ const Page404 = () => {
           textAlign: 'center',
           fontWeight: 'bold',
           fontSize: '24px',
-          marginTop: '30px',
+          marginTop: '2rem',
         }}
         to="/"
       >
