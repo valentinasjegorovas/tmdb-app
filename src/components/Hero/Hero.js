@@ -5,19 +5,22 @@ import ErrorMessage from '../ErrorMessage/ErrorMessage';
 import PropTypes from 'prop-types';
 import './Hero.scss';
 
-const Hero = (props) => {
-  const [movie, setMovie] = useState([]);
-  const { loading, error, getMoviesNowPlaying } = props;
+const Hero = ({ loading, error, getMoviesNowPlaying }) => {
+  const [movie, setMovie] = useState({});
 
   useEffect(() => {
-    const moviesIds = Math.floor(Math.random() * 20);
-    if (!moviesIds) return;
-    getMoviesNowPlaying().then((movie) => setMovie(movie[moviesIds]));
+    getMoviesNowPlaying().then((movies) => {
+      const randomMovieIndex = Math.floor(Math.random() * movies.length);
+      setMovie(movies[randomMovieIndex]);
+    });
   }, []);
 
   const spinner = loading ? <Spinner /> : null;
   const errorMessage = error ? <ErrorMessage /> : null;
-  const content = loading || error ? null : <View movie={movie} />;
+  const content =
+    !loading && !error && Object.keys(movie).length > 0 ? (
+      <View movie={movie} />
+    ) : null;
 
   return (
     <>
@@ -28,9 +31,8 @@ const Hero = (props) => {
   );
 };
 
-const View = (props) => {
-  const { backdrop_path, poster_path, title, overview, vote_average } =
-    props.movie;
+const View = ({ movie }) => {
+  const { backdrop_path, poster_path, title, overview, vote_average } = movie;
   const bgImage = 'https://media.themoviedb.org/t/p/original';
   const posterImage = 'https://media.themoviedb.org/t/p/w500';
 
@@ -62,6 +64,10 @@ Hero.propTypes = {
   getMoviesNowPlaying: PropTypes.func.isRequired,
   error: PropTypes.any,
   loading: PropTypes.bool.isRequired,
+};
+
+View.propTypes = {
+  movie: PropTypes.object.isRequired,
 };
 
 export default Hero;
