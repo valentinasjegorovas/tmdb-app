@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/tmdb-app/static/css/main.0491ad19.css",
-    "main.js": "/tmdb-app/static/js/main.9620cc94.js",
+    "main.js": "/tmdb-app/static/js/main.80f2247b.js",
     "static/media/drive.jpg": "/tmdb-app/static/media/drive.f731b31984e5262c81a4.jpg",
     "static/media/error.gif": "/tmdb-app/static/media/error.42292aa12b6bc303ce99.gif",
     "index.html": "/tmdb-app/index.html",
     "static/media/profile.svg": "/tmdb-app/static/media/profile.09187e8f10599a1a473c71aaf8a053e0.svg",
     "main.0491ad19.css.map": "/tmdb-app/static/css/main.0491ad19.css.map",
-    "main.9620cc94.js.map": "/tmdb-app/static/js/main.9620cc94.js.map"
+    "main.80f2247b.js.map": "/tmdb-app/static/js/main.80f2247b.js.map"
   },
   "entrypoints": [
     "static/css/main.0491ad19.css",
-    "static/js/main.9620cc94.js"
+    "static/js/main.80f2247b.js"
   ]
 }
