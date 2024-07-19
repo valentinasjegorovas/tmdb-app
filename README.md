@@ -34,6 +34,20 @@ To get started with the project, follow these steps:
    ```sh
    git clone https://github.com/valentinasjegorovas/tmdb-app
    
+2. **Navigate into the project directory**:
+   ```sh
+   cd tmdb-app
+   
+3. **Install NPM packages**:
+   ```sh
+   npm install
+
+## Usage
+
+   **To start the project**:
+   ```sh
+   npm start
+```
 ## Technologies Used
 
 This project utilizes the following technologies and libraries:
