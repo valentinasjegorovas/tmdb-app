@@ -18,13 +18,13 @@ This project is a movie information application that fetches data from the TMDB 
 ## Screenshots
 
 ### Home Page
-![Home Page](https://imgur.com/VwZWPp8)
+![Home Page](https://imgur.com/VwZWPp8.png)
 
 ### Movies Page
-![Movies Page](https://imgur.com/9RvSLQ0)
+![Movies Page](https://imgur.com/9RvSLQ0.png)
 
 ### Movie Details
-![Movie Details](https://imgur.com/2cAVXvZ)
+![Movie Details](https://imgur.com/2cAVXvZ.png)
 
 ## Installation
 
